@@ -12,5 +12,17 @@ public class Book {
         this.bookID  = nextID++;
     }
 
+    public void borrowBook(){
+        isBorrowed = true;
+    }
+
+    public void returnBook(){
+        isBorrowed = false;
+    }
+
+    public boolean isBookBorrowed(){
+        return isBorrowed;
+    }
+
 }
 
