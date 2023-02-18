@@ -23,6 +23,17 @@ public class Book {
     public boolean isBookBorrowed(){
         return isBorrowed;
     }
-
+    public void show() {
+        System.out.println("Book ID: " + bookID);
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.print("Status: ");
+        if (isBorrowed)
+            System.out.println("Not Available");
+        else
+            System.out.println("Available");
+        System.out.println();
+    }
+}
 }
 
