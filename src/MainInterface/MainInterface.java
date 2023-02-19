@@ -10,7 +10,7 @@ public class MainInterface implements Login, Register{
 
     public static void menu(){
         if(currentUser == null){
-            LoginInterface();
+            LoginMenu();
         }else{
 
         }
@@ -19,11 +19,36 @@ public class MainInterface implements Login, Register{
 
 
 
+    public static void MainMenu(){
+        ArrayList<String> menu = new ArrayList<String>();
+        menu.add("Show all available books");
+        menu.add("Pick up books");
+        menu.add("Search");
+        menu.add("Return book");
+        menu.add("MyBooks");
+        int c = 1;
+        for (String elem:menu){
+            System.out.println("%d) %s".formatted(c++, elem));
+        }
+    }
 
-
-    public static void LoginInterface(){
+    public static void SearchMenu(){
+        ArrayList<String> menu = new ArrayList<String>();
+        menu.add("Search by id");
+        menu.add("Search by name");
+        menu.add("Search by author");
+        int c = 1;
+        for (String elem:menu){
+            System.out.println("%d) %s".formatted(c++, elem));
+        }
+    }
+    public static void LoginMenu(){
         ArrayList<String> menu = new ArrayList<String>();
         menu.add("Login"); menu.add("Register");
+        int c = 1;
+        for (String elem:menu){
+            System.out.println("%d) %s".formatted(c++, elem));
+        }
     }
     @Override
     public void Login() {
