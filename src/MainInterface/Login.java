@@ -22,7 +22,7 @@ public interface Login {
                     return null;
                 }else if(Objects.equals(resultset.getString("isAdmin"), "1")){
                     System.out.printf("Welcome, %s%n", name);
-                    return (User) new Reader(id, name, lastname, username);
+                    return new Reader(id, name, lastname, username);
                 }
             }else{
                 System.out.println("Wrong username or password!");

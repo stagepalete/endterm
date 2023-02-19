@@ -1,5 +1,6 @@
 package MainInterface;
 
+import Books.Book;
 import Users.*;
 
 import java.sql.SQLException;
@@ -37,7 +38,7 @@ public class MainInterface implements Login, Register{
                     String username = input.next();
                     System.out.print("Password: ");
                     String password = input.next();
-                    Login.Login(username, password);
+                    currentUser = Login.Login(username, password);
                     menu();
                 }
                 case 2 -> {
@@ -75,7 +76,40 @@ public class MainInterface implements Login, Register{
         }
     }
 
-    public static void UserMenu(){}
+    public static void UserMenu(){
+        try {
+            System.out.print("Choose option: ");
+            UserOption = Integer.parseInt(input.next());
+            switch (UserOption) {
+                case 1 -> {
+                    Book.showAllAvailableBooks();
+                }
+                case 2 -> {
+
+                }
+                case 3 ->{
+
+                }
+                case 4 -> {
+
+                }
+                case 5->{
+
+                }
+                case 6-> {
+                    currentUser = null;
+                }
+                case 7->{
+                    System.exit(0);
+                }
+            }
+        }catch (NumberFormatException e) {
+            System.out.println("Error: You must enter an integer.");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
     public static void AdminMenu(){}
 
 
