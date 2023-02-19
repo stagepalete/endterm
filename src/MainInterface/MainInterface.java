@@ -3,13 +3,12 @@ package MainInterface;
 import States.*;
 import Users.*;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainInterface implements Login, Register{
     private static int UserOption;
     private static User currentUser = null;
-
-
     public static void menu(){
         if(currentUser == null){
             LoginMenu();
@@ -31,10 +30,7 @@ public class MainInterface implements Login, Register{
         menu.add("Search");
         menu.add("Return book");
         menu.add("MyBooks");
-        int c = 1;
-        for (String elem:menu){
-            System.out.printf("%d) %s%n", c++, elem);
-        }
+        showOptions(menu);
     }
     public static void AdminMenu(){
         ArrayList<String> menu = new ArrayList<String>();
@@ -42,10 +38,7 @@ public class MainInterface implements Login, Register{
         menu.add("Delete book");
         menu.add("Search book");
         menu.add("Update book");
-        int c = 1;
-        for (String elem:menu){
-            System.out.printf("%d) %s%n", c++, elem);
-        }
+        showOptions(menu);
     }
     public static void SearchMenu(){
         //Shows searching methods
@@ -53,17 +46,17 @@ public class MainInterface implements Login, Register{
         menu.add("Search by id");
         menu.add("Search by name");
         menu.add("Search by author");
-        int c = 1;
-        for (String elem:menu){
-            System.out.printf("%d) %s%n", c++, elem);
-        }
+        showOptions(menu);
     }
     public static void LoginMenu(){
         // Shows login options
         ArrayList<String> menu = new ArrayList<String>();
         menu.add("Login"); menu.add("Register");
+        showOptions(menu);
+    }
+    public static void showOptions(ArrayList<String> options){
         int c = 1;
-        for (String elem:menu){
+        for (String elem:options){
             System.out.printf("%d) %s%n", c++, elem);
         }
     }
