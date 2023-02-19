@@ -17,9 +17,6 @@ public class User {
         PASSWORD = password;
     }
 
-    public void addBook(String name, String author, String date, String isbn) throws SQLException{
-        state.addBook(name, author, date, isbn);
-    }
 
     public void setState(State state){
         this.state = state;
