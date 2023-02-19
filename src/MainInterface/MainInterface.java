@@ -1,35 +1,43 @@
 package MainInterface;
 
-import States.*;
 import Users.*;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.util.Scanner;
 
-public class MainInterface implements Login, Register{
+public class MainInterface{
     private static int UserOption;
     private static User currentUser = null;
+    private static final Scanner input = new Scanner(System.in);
     public static void menu(){
         if(currentUser == null){
             Menu.LoginMenu();
+            LoginMenu();
         }else if(!User.isAdmin()){
             Menu.UserMenu();
+            UserMenu();
         }else{
             Menu.AdminMenu();
+            AdminMenu();
         }
     }
 
 
+    public static void LoginMenu(){
+        try{
+            UserOption = Integer.parseInt(input.next());
+            switch (UserOption){
+                case 1:
+                    System.out.print("Username: ");
+                    String username = input.next();
+                    System.out.println("Password: ");
+                    String password = input.next();
 
-
-
-    @Override
-    public void Login() {
-
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error: You must enter an integer.");
+        }
     }
 
-    @Override
-    public void register() {
-
-    }
+    public static void UserMenu(){}
+    public static void AdminMenu(){}
 }

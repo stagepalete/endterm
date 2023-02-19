@@ -1,9 +1,10 @@
 package Users;
 
+
 import States.State;
 import States.UserState;
 
-public class User {
+public class User implements Login, Register{
     private static int ID;
     private static String NAME;
     private static String LASTNAME;
@@ -44,5 +45,15 @@ public class User {
 
     public static boolean isAdmin(){
         return isAdmin;
+    }
+
+    @Override
+    public User Login(String username, String password) {
+        return null;
+    }
+
+    @Override
+    public void register() {
+
     }
 }

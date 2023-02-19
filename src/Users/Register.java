@@ -1,4 +1,4 @@
-package MainInterface;
+package Users;
 
 public interface Register {
     public void register();
