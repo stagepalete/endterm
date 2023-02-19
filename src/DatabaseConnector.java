@@ -3,7 +3,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnector {
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/libraryassignment";  //Connection URL to database
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/endterm";  //Connection URL to database
     private static final String  USERNAME = "root"; //Username to access database
     private static final String PASSWORD = ""; //password to access database
     private static boolean isConnected = false; //Connection status
