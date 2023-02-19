@@ -15,10 +15,15 @@ public class DatabaseConnector {
         }
         return connection; //returning connection
     }
-    public static ResultSet executeQuery(String query) throws SQLException {
+    public static ResultSet executeQueryRead(String query) throws SQLException {
         Connection connection = connect();
         Statement statement = connection.createStatement();
         return statement.executeQuery(query);
+    }
+    public static void executeQueryCUD(String query) throws SQLException{
+        Connection connection = connect();
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(query);
     }
     public static boolean isConnected(){
         return isConnected;
