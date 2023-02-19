@@ -15,6 +15,6 @@ public interface State {
     public void pickBook(int user_id, int book_id, String day_of_acq, String day_of_return) throws SQLException;
 
 
-    public void returnBook();
-    public void showMyBooks();
+    public void returnBook(int id) throws SQLException;
+    public void showMyBooks(int id) throws SQLException;
 }

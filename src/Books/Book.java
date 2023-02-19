@@ -9,6 +9,7 @@ public class Book {
 
 
     public static void showAllAvailableBooks() throws SQLException {
+        System.out.println();
         String query = "Select * from `books` where `isAvailable` = 1";
         int c = 1;
         ResultSet resultSet = DatabaseConnector.executeQueryRead(query);

@@ -85,9 +85,8 @@ public class MainInterface implements Login, Register{
             UserOption = Integer.parseInt(input.next());
             switch (UserOption) {
                 case 1 -> {
-                    System.out.println();
+
                     Book.showAllAvailableBooks();
-                    System.out.println();
                 }
                 case 2 -> {
                     Book.showAllAvailableBooks();
@@ -140,10 +139,13 @@ public class MainInterface implements Login, Register{
                     }
                 }
                 case 4 -> {
-
+                    currentUser.showMyBooks(currentUser.getID());
+                    System.out.println("Choose id of book: ");
+                    int id = Integer.parseInt(input.next());
+                    currentUser.returnBook(id);
                 }
                 case 5->{
-
+                    currentUser.showMyBooks(currentUser.getID());
                 }
                 case 6-> {
                     currentUser = null;

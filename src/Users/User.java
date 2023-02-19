@@ -50,4 +50,12 @@ public class User{
     public void pickBook(int user_id, int book_id, String day_of_acq, String day_of_return) throws SQLException {
         state.pickBook(user_id, book_id, day_of_acq, day_of_return);
     }
+
+    public void showMyBooks(int id) throws SQLException {
+        state.showMyBooks(id);
+    }
+
+    public void returnBook(int id) throws SQLException {
+        state.returnBook(id);
+    }
 }

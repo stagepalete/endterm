@@ -2,6 +2,7 @@ package States;
 
 import Database.DatabaseConnector;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserState implements State {
@@ -29,12 +30,27 @@ public class UserState implements State {
     }
 
     @Override
-    public void returnBook() {
-
+    public void returnBook(int id) throws SQLException {
+        String query = "DELETE FROM `book-user` WHERE `book-user`.`id` = %d".formatted(id);
+        DatabaseConnector.executeQueryCUD(query);
+        System.out.println("Book returned");
     }
 
     @Override
-    public void showMyBooks() {
-
+    public void showMyBooks(int user_id) throws SQLException {
+        System.out.println();
+        String query = "SELECT books.*,  `book-user`.`day_of_acquisition`, `book-user`.`day_of_return` from `book-user`JOIN books ON `book-user`.`book_id` = books.id  where `book-user`.`user_id` = %d".formatted(user_id);
+        ResultSet resultSet= DatabaseConnector.executeQueryRead(query);
+        while(resultSet.next()){
+            int id = resultSet.getInt("id");
+            String name = resultSet.getString("name");
+            String author = resultSet.getString("author");
+            String year_of_publish = resultSet.getString("year_of_publish");
+            String isbn = resultSet.getString("isbn");
+//            String day_of_acquisition = resultSet.getString("day_of_acquisition");
+            String day_of_return = resultSet.getString("day_of_return");
+            System.out.println("%d) %s, %s, %s, %s (return day: %s)". formatted(id, name, author, year_of_publish, isbn, day_of_return));
+        }
+        System.out.println();
     }
 }

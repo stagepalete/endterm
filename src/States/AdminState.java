@@ -33,12 +33,12 @@ public class AdminState implements State {
     }
 
     @Override
-    public void returnBook() {
+    public void returnBook(int id) {
 
     }
 
     @Override
-    public void showMyBooks() {
+    public void showMyBooks(int id) {
 
     }
 }
