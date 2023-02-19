@@ -2,6 +2,7 @@ package Books;
 
 import Database.DatabaseConnector;
 
+import javax.xml.transform.Result;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -23,6 +24,15 @@ public class Book {
             System.out.println("%d) %s, %s, %s, %s". formatted(id, name, author, year_of_publish, isbn));
         }
         System.out.println();
+    }
+    public static boolean checkForExistence(int id) throws SQLException {
+        String query = "Select * from `books` where `isAvailable` = 1 and `id` = %d".formatted(id);
+        ResultSet resultSet = DatabaseConnector.executeQueryRead(query);
+        if(!resultSet.next()){
+            System.out.println("There is no book with such id");
+            return false;
+        }
+        return true;
     }
     public static void searchById(int id) throws SQLException{
         String query = "SELECT * from `books` where `id` = %d".formatted(id);

@@ -95,10 +95,13 @@ public class MainInterface implements Login, Register{
                     Book.showAllAvailableBooks();
                     System.out.print("Enter book id from list below: ");
                     int id = Integer.parseInt(input.next());
+                    while(!Book.checkForExistence(id)){
+                        return;
+                    }
                     String day_of_a = null;
                     String day_of_r = null;
                     while(day_of_a == null && day_of_r == null){
-                        System.out.print("Enter day of acquisition(YYY-MM-DD): ");
+                        System.out.print("Enter day of acquisition(YYYY-MM-DD): ");
                         String day_of_acq = input.next();
                         day_of_a= DateValidator.DateFormatValidate(day_of_acq);
                         if(day_of_a == null){
