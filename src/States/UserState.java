@@ -55,6 +55,15 @@ public class UserState implements State {
         System.out.println();
     }
 
+    public boolean checkUserBooks(int user_id) throws SQLException{
+        String query = "Select * from `book-user` where `user_id` = %d".formatted(user_id);
+        ResultSet resultSet = DatabaseConnector.executeQueryRead(query);
+        if(!resultSet.next()){
+            System.out.println("You dont have any book!");
+            return false;
+        }
+        return true;
+    }
     @Override
     public boolean checkBookExistence(int id) throws SQLException {
         String query = "Select * from `book-user` where `id` = %d".formatted(id);

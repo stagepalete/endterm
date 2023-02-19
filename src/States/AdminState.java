@@ -47,4 +47,9 @@ public class AdminState implements State {
 
         return false;
     }
+
+    @Override
+    public boolean checkUserBooks(int user_id) throws SQLException {
+        return false;
+    }
 }
