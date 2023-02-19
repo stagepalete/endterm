@@ -818,7 +818,7 @@ public class CollectionAddTest extends BaseCollectionTestCase {
         doc = docs.next();
         assertEquals("null", ((JsonLiteral) doc.get("_id")).toString());
 
-        //Try inserting duplicate _ids. User should get error
+        //Try inserting duplicate _ids. Users.User should get error
         assertThrows(XProtocolError.class, "ERROR 5116 \\(HY000\\) Document contains a field value that is not unique but required to be",
                 () -> this.collection.add("{\"_id\":\"abcd1234\",\"FLD1\":\"Data1\"}").add("{\"_id\":\"abcd1234\",\"FLD1\":\"Data2\"}").execute());
     }

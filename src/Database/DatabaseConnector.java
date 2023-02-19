@@ -1,5 +1,6 @@
-import java.sql.*;
+package Database;
 
+import java.sql.*;
 public class DatabaseConnector {
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/endterm";  //Connection URL to database
     private static final String  USERNAME = "root"; //Username to access database

@@ -500,11 +500,11 @@ public class ConnectionUrlTest {
                 String actual;
                 // Protocol:
                 assertEquals(csg.getProtocol(), cup.getScheme(), cs);
-                // User & Host:
+                // Users.User & Host:
                 assertEquals(urlMode.getHostsCount(), cup.getHosts().size(), cs);
                 for (int hostIndex = 0; hostIndex < urlMode.getHostsCount(); hostIndex++) {
                     HostInfo hi = cup.getHosts().get(hostIndex);
-                    // User(n):
+                    // Users.User(n):
                     expected = testCSParserTrimTail(testCSParserTrimHead(csg.getUserInfo(hostIndex), ":"), "@", ":");
                     actual = new StringBuilder(hi.getUser() == null ? "" : hi.getUser()).append(":").append(hi.getPassword() == null ? "" : hi.getPassword())
                             .toString();

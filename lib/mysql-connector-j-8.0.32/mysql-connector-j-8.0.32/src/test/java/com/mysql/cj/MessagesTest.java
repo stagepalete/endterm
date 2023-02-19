@@ -118,7 +118,7 @@ public class MessagesTest {
         assertEquals("Unsupported transaction isolation level 'Test'", Messages.getString("Connection.25", new Object[] { "Test" }));
 
         assertEquals(
-                "User does not have access to metadata required to determine stored procedure parameter types."
+                "Users.User does not have access to metadata required to determine stored procedure parameter types."
                         + " If rights can not be granted, configure connection with \"noAccessToProcedureBodies=true\" "
                         + "to have driver generate parameters that represent INOUT strings irregardless of actual parameter types.",
                 Messages.getString("DatabaseMetaData.4"));

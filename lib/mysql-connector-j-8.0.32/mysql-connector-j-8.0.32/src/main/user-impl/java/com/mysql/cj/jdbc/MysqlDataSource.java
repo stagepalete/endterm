@@ -92,7 +92,7 @@ public class MysqlDataSource extends JdbcPropertySetImpl implements DataSource, 
     /** Was the port explicitly set? */
     protected boolean explicitPort = false;
 
-    /** User name */
+    /** Users.User name */
     protected String user = null;
 
     /** Password */
@@ -375,7 +375,7 @@ public class MysqlDataSource extends JdbcPropertySetImpl implements DataSource, 
      * Sets the user ID.
      * 
      * @param userID
-     *            the User ID
+     *            the Users.User ID
      */
     public void setUser(String userID) {
         this.user = userID;

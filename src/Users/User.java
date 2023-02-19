@@ -1,4 +1,7 @@
-import java.sql.SQLException;
+package Users;
+
+import States.State;
+import States.UserState;
 
 public class User {
     private static int ID;
@@ -7,7 +10,7 @@ public class User {
     private static String USERNAME;
     private static String PASSWORD;
     private static boolean isAdmin = false;
-    private State state = new AdminState();
+    private State state = new UserState();
     User(){};
     public User(int id, String name, String lastname, String username, String password){
         ID = id;

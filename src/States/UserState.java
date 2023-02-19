@@ -1,6 +1,10 @@
+package States;
+
+import States.State;
+
 import java.sql.SQLException;
 
-public class UserState implements State{
+public class UserState implements State {
     @Override
     public void addBook(String name, String author, String date, String isbn) throws SQLException {
         System.out.println("You don't have permissions to access this option");

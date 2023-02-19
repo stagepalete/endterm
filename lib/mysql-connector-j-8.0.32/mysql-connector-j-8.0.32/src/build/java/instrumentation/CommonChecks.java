@@ -69,7 +69,7 @@ public class CommonChecks {
         //CtClass ctMysqlSavepoint = pool.get(MysqlSavepoint.class.getName());
         CtClass ctObjectArray = pool.get(Object[].class.getName());
         //CtClass ctProperties = pool.get(Properties.class.getName());
-        //CtClass ctReader = pool.get(Reader.class.getName());
+        //CtClass ctReader = pool.get(Users.Reader.class.getName());
         CtClass ctSavepoint = pool.get(Savepoint.class.getName());
         //CtClass ctStatement = pool.get(Statement.class.getName());
         CtClass ctString = pool.get(String.class.getName());

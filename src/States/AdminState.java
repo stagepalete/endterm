@@ -1,8 +1,10 @@
-import javax.xml.crypto.Data;
-import java.sql.ResultSet;
+package States;
+
+import Database.DatabaseConnector;
+
 import java.sql.SQLException;
 
-public class AdminState implements State{
+public class AdminState implements State {
 
     @Override
     public void addBook(String name, String author, String date, String isbn) throws SQLException {

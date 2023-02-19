@@ -14,7 +14,7 @@ $ openssl genrsa -out ca-key.pem 2048
 $ openssl req -new -x509 -nodes -sha256 -days 3650 -key ca-key.pem -out ca-cert.pem
   (...)
   Country Name (2 letter code) []:US
-  State or Province Name (full name) []:California
+  States.State or Province Name (full name) []:California
   Locality Name (eg, city) []:Redwood Shores
   Organization Name (eg, company) []:Oracle
   Organizational Unit Name (eg, section) []:MySQL
@@ -36,7 +36,7 @@ $ openssl req -new -key server-key.pem -out server-csr.pem \
     -config <(cat /etc/ssl/openssl.cnf <(printf "\n[SAN]\n\nsubjectAltName=@alt_names\n\n[alt_names]\nDNS.1=bug99767.mysql.san1.tst\nDNS.2=*.mysql.san2.tst\nDNS.3=bug*.mysql.san3.tst\nDNS.4=*99767.mysql.san4.tst\nDNS.5=bug99767.*.san5.tst\nDNS.6=bug99767.*\nDNS.7=*\nIP.1=9.9.7.67\nIP.2=99.7.6.7"))
   (...)
   Country Name (2 letter code) []:US
-  State or Province Name (full name) []:California
+  States.State or Province Name (full name) []:California
   Locality Name (eg, city) []:Redwood Shores
   Organization Name (eg, company) []:Oracle
   Organizational Unit Name (eg, section) []:MySQL
@@ -69,7 +69,7 @@ $ openssl genrsa -out client-key.pem 2048
 $ openssl req -new -key client-key.pem -out client-csr.pem
   (...)
   Country Name (2 letter code) []:US
-  State or Province Name (full name) []:California
+  States.State or Province Name (full name) []:California
   Locality Name (eg, city) []:Redwood Shores
   Organization Name (eg, company) []:Oracle
   Organizational Unit Name (eg, section) []:MySQL

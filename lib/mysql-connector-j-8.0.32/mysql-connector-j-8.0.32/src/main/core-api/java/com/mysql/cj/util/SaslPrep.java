@@ -36,7 +36,7 @@ import com.mysql.cj.exceptions.ExceptionFactory;
 import com.mysql.cj.exceptions.WrongArgumentException;
 
 /**
- * Implementation for SASLprep: Stringprep Profile for User Names and Passwords, as specified in <a href="https://tools.ietf.org/html/rfc4013">RFC 4013</a>.
+ * Implementation for SASLprep: Stringprep Profile for Users.User Names and Passwords, as specified in <a href="https://tools.ietf.org/html/rfc4013">RFC 4013</a>.
  * 
  * @see <a href="https://tools.ietf.org/html/rfc3454">RFC 3454</a>
  */

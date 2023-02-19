@@ -362,7 +362,7 @@ public class NativeAuthenticationProvider implements AuthenticationProvider<Nati
     /**
      * Performs an authentication handshake to authorize connection to a given database as a given MySQL user.
      * This can happen upon initial connection to the server, after receiving Auth Challenge Packet, or
-     * at any moment during the connection life-time via a Change User request.
+     * at any moment during the connection life-time via a Change Users.User request.
      * 
      * This method will use registered authentication plugins as requested by the server.
      * 
@@ -422,7 +422,7 @@ public class NativeAuthenticationProvider implements AuthenticationProvider<Nati
 
         checkConfidentiality(plugin);
 
-        // Servers not affected by Bug#70865 expect the Change User Request containing a correct answer to seed sent by the server during the initial handshake,
+        // Servers not affected by Bug#70865 expect the Change Users.User Request containing a correct answer to seed sent by the server during the initial handshake,
         // thus we reuse it here. Servers affected by Bug#70865 will just ignore it and send the Auth Switch.
         NativePacketPayload fromServer = new NativePacketPayload(StringUtils.getBytes(this.seed));
         String sourceOfAuthData = this.serverDefaultAuthenticationPluginName;
@@ -636,7 +636,7 @@ public class NativeAuthenticationProvider implements AuthenticationProvider<Nati
         last_sent.writeInteger(IntegerDataType.INT1, collationIndex);
         last_sent.writeBytes(StringLengthDataType.STRING_FIXED, new byte[23]);   // Set of bytes reserved for future use.
 
-        // User/Password data
+        // Users.User/Password data
         last_sent.writeBytes(StringSelfDataType.STRING_TERM, StringUtils.getBytes(this.username, enc));
         if ((clientParam & NativeServerSession.CLIENT_PLUGIN_AUTH_LENENC_CLIENT_DATA) != 0) {
             // send lenenc-int length of auth-response and string[n] auth-response
@@ -673,7 +673,7 @@ public class NativeAuthenticationProvider implements AuthenticationProvider<Nati
                 + 1);
         last_sent.writeInteger(IntegerDataType.INT1, NativeConstants.COM_CHANGE_USER);
 
-        // User/Password data
+        // Users.User/Password data
         last_sent.writeBytes(StringSelfDataType.STRING_TERM, StringUtils.getBytes(this.username, enc));
         // 'auth-response-len' is limited to one Byte but, in case of success, COM_CHANGE_USER will be followed by an AuthSwitchRequest anyway
         if (authData.getPayloadLength() < 256) {

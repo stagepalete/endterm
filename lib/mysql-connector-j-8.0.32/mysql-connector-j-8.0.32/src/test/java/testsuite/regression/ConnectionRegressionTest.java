@@ -2806,7 +2806,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
             int startConnCount = 0;
 
             while (this.rs.next()) {
-                if (this.rs.getString("User").equals(userParts[0]) && this.rs.getString("Host").startsWith(userParts[1])) {
+                if (this.rs.getString("Users.User").equals(userParts[0]) && this.rs.getString("Host").startsWith(userParts[1])) {
                     startConnCount++;
                 }
             }
@@ -2824,7 +2824,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
             int endConnCount = 0;
 
             while (this.rs.next()) {
-                if (this.rs.getString("User").equals(userParts[0]) && this.rs.getString("Host").startsWith(userParts[1])) {
+                if (this.rs.getString("Users.User").equals(userParts[0]) && this.rs.getString("Host").startsWith(userParts[1])) {
                     endConnCount++;
                 }
             }
@@ -3244,7 +3244,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
             createUser("'wl5851user1prx'@'%'", "IDENTIFIED BY 'foo'");
             this.stmt.executeUpdate("GRANT PROXY ON 'wl5851user1prx'@'%' TO 'wl5851user1'@'%'");
             this.stmt.executeUpdate("DELETE FROM mysql.db WHERE user='wl5851user1prx'");
-            this.stmt.executeUpdate("INSERT INTO mysql.db (Host, Db, User, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, "
+            this.stmt.executeUpdate("INSERT INTO mysql.db (Host, Db, Users.User, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, "
                     + "Drop_priv, Grant_priv, References_priv, Index_priv, Alter_priv, Create_tmp_table_priv, Lock_tables_priv, "
                     + "Create_view_priv,Show_view_priv, Create_routine_priv, Alter_routine_priv, Execute_priv, Event_priv, Trigger_priv) VALUES ('%', '"
                     + dbname + "', 'wl5851user1prx', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'N')");
@@ -3304,7 +3304,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
 
             createUser("'wl5851user2'@'%'", "IDENTIFIED WITH two_questions AS 'two_questions_password'");
             this.stmt.executeUpdate("DELETE FROM mysql.db WHERE user='wl5851user2'");
-            this.stmt.executeUpdate("INSERT INTO mysql.db (Host, Db, User, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, "
+            this.stmt.executeUpdate("INSERT INTO mysql.db (Host, Db, Users.User, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, "
                     + "Drop_priv, Grant_priv, References_priv, Index_priv, Alter_priv, Create_tmp_table_priv, Lock_tables_priv, Create_view_priv, "
                     + "Show_view_priv, Create_routine_priv, Alter_routine_priv, Execute_priv, Event_priv, Trigger_priv) VALUES ('%', '" + dbname
                     + "', 'wl5851user2', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'N')");
@@ -3363,7 +3363,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
 
             createUser("'wl5851user3'@'%'", "IDENTIFIED WITH three_attempts AS 'three_attempts_password'");
             this.stmt.executeUpdate("DELETE FROM mysql.db WHERE user='wl5851user3'");
-            this.stmt.executeUpdate("INSERT INTO mysql.db (Host, Db, User, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, "
+            this.stmt.executeUpdate("INSERT INTO mysql.db (Host, Db, Users.User, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, "
                     + "Drop_priv, Grant_priv, References_priv, Index_priv, Alter_priv, Create_tmp_table_priv, Lock_tables_priv, Create_view_priv, "
                     + "Show_view_priv, Create_routine_priv, Alter_routine_priv, Execute_priv, Event_priv, Trigger_priv) VALUES ('%', '" + dbname
                     + "', 'wl5851user3', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'N')");
@@ -3651,7 +3651,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
 
             createUser("'wl5735user'@'%'", "identified WITH cleartext_plugin_server AS ''");
             this.stmt.executeUpdate("DELETE FROM mysql.db WHERE user='wl5735user'");
-            this.stmt.executeUpdate("INSERT INTO mysql.db (Host, Db, User, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, "
+            this.stmt.executeUpdate("INSERT INTO mysql.db (Host, Db, Users.User, Select_priv, Insert_priv, Update_priv, Delete_priv, Create_priv, "
                     + "Drop_priv, Grant_priv, References_priv, Index_priv, Alter_priv, Create_tmp_table_priv, Lock_tables_priv, Create_view_priv, "
                     + "Show_view_priv, Create_routine_priv, Alter_routine_priv, Execute_priv, Event_priv, Trigger_priv) VALUES ('%', '" + dbname
                     + "', 'wl5735user', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'N')");
@@ -7017,7 +7017,7 @@ public class ConnectionRegressionTest extends BaseTestCase {
             this.stmt.execute("GRANT ALL ON *.* TO 'bug75670user_sha'@'%'");
 
             System.out.println();
-            System.out.printf("%-25s : %-18s : %-25s : %-25s : %s%n", "DefAuthPlugin", "AllowPubKeyRet", "User", "Passwd", "Test result");
+            System.out.printf("%-25s : %-18s : %-25s : %-25s : %s%n", "DefAuthPlugin", "AllowPubKeyRet", "Users.User", "Passwd", "Test result");
             System.out.println(
                     "----------------------------------------------------------------------------------------------------" + "------------------------------");
 

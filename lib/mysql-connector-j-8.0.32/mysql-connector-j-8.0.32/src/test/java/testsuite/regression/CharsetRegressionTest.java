@@ -524,7 +524,7 @@ public class CharsetRegressionTest extends BaseTestCase {
         buf[8] = (byte) 'o';
         buf[9] = (byte) 't';
 
-        String testString = "?State-bot";
+        String testString = "?States.State-bot";
         String convertedString = StringUtils.toAsciiString(buf);
 
         for (int i = 0; i < convertedString.length(); i++) {

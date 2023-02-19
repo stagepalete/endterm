@@ -49,12 +49,12 @@ import com.mysql.cj.util.Util;
  */
 public class SQLError {
     /*
-     * SQL State Class SQLNonTransientException Subclass 08
+     * SQL States.State Class SQLNonTransientException Subclass 08
      * SQLNonTransientConnectionException 22 SQLDataException 23
      * SQLIntegrityConstraintViolationException N/A
      * SQLInvalidAuthorizationException 42 SQLSyntaxErrorException
      * 
-     * SQL State Class SQLTransientException Subclass 08
+     * SQL States.State Class SQLTransientException Subclass 08
      * SQLTransientConnectionException 40 SQLTransactionRollbackException N/A
      * SQLTimeoutException
      */

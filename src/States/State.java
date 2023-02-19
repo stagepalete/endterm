@@ -1,3 +1,5 @@
+package States;
+
 import java.sql.SQLException;
 
 public interface State {
@@ -9,7 +11,7 @@ public interface State {
     public void deleteBook(int id) throws SQLException;
 
 
-//    User methods
+//    Users.User methods
     public void pickBook();
     public void returnBook();
     public void showMyBooks();

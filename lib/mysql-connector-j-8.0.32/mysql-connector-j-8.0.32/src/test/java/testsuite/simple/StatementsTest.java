@@ -2051,7 +2051,7 @@ public class StatementsTest extends BaseTestCase {
             nclob2.setString(1, "aaa");
             pstmt1.setNClob(2, nclob2);                   // for setNClob(int, NClob)
             Reader reader3 = new StringReader("\'aaa\'");
-            pstmt1.setNClob(3, reader3, 5);               // for setNClob(int, Reader, long)
+            pstmt1.setNClob(3, reader3, 5);               // for setNClob(int, Users.Reader, long)
             pstmt1.execute();
 
             ResultSet rs1 = this.stmt.executeQuery("SELECT c1, c2, c3 FROM testSetNClob");

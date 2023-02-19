@@ -242,7 +242,7 @@ public class FailoverConnectionProxy extends MultiHostConnectionProxy {
     }
 
     /**
-     * Replaces the previous underlying connection by the connection given. State from previous connection, if any, is synchronized with the new one.
+     * Replaces the previous underlying connection by the connection given. States.State from previous connection, if any, is synchronized with the new one.
      * 
      * @param hostIndex
      *            The host index in the global hosts list that matches the given connection.
