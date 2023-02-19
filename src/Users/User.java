@@ -11,16 +11,13 @@ public class User {
     private static String NAME;
     private static String LASTNAME;
     private static String USERNAME;
-    private static String PASSWORD;
-    private static boolean isAdmin = false;
     private State state = new UserState();
     User(){};
-    public User(int id, String name, String lastname, String username, String password){
+    public User(int id, String name, String lastname, String username){
         ID = id;
         NAME = name;
         LASTNAME = lastname;
         USERNAME = username;
-        PASSWORD = password;
     }
 
 
@@ -44,11 +41,6 @@ public class User {
     public String getUSERNAME() {
         return USERNAME;
     }
-
-    public static boolean isAdmin(){
-        return isAdmin;
-    }
-
 
 
 }

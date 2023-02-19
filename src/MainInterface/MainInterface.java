@@ -15,7 +15,7 @@ public class MainInterface implements Login, Register{
             if(currentUser == null){
                 Menu.AuthMenu();
                 AuthMenu();
-            }else if(!User.isAdmin()){
+            }else if(!User.class == Admin){
                 Menu.UserMenu();
                 UserMenu();
             }else{
