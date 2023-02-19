@@ -1,6 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DatabaseConnector {
     private static final String URL = "jdbc:mysql://127.0.0.1:3306/endterm";  //Connection URL to database
@@ -17,7 +15,11 @@ public class DatabaseConnector {
         }
         return connection; //returning connection
     }
-
+    public static ResultSet executeQuery(String query) throws SQLException {
+        Connection connection = connect();
+        Statement statement = connection.createStatement();
+        return statement.executeQuery("SELECT * FROM `users`");
+    }
     public static boolean isConnected(){
         return isConnected;
     } //getter connection status to check

@@ -1,8 +1,16 @@
+import java.sql.SQLException;
+
 public interface State {
-    public void addBook();
+//    Admin methods
+    public void addBook() throws SQLException;
 
     public void updateBook();
 
     public void deleteBook();
 
+
+//    User methods
+    public void pickBook();
+    public void returnBook();
+    public void showMyBooks();
 }
