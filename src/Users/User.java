@@ -26,20 +26,23 @@ public class User {
     }
 
 
-    public static int getID() {
+    public int getID() {
         return ID;
     }
 
-    public static String getNAME() {
+    public String getNAME() {
         return NAME;
     }
 
-    public static String getLASTNAME() {
+    public String getLASTNAME() {
         return LASTNAME;
     }
 
-    public static String getUSERNAME() {
+    public String getUSERNAME() {
         return USERNAME;
     }
 
+    public static boolean isAdmin(){
+        return isAdmin;
+    }
 }

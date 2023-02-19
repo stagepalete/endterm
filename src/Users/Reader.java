@@ -1,5 +1,7 @@
 package Users;
 
+import States.State;
+
 public class Reader extends User {
 
     public Reader(){
@@ -10,5 +12,7 @@ public class Reader extends User {
     }
 
 
-
+    public void setState(State state){
+        super.setState(state);
+    }
 }
