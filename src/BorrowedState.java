@@ -8,4 +8,11 @@ public class BorrowedState  implements BookState {
         }
         public boolean isBorrowed() {
             return true;
+    }
+    public User getBorrower() {
+        return borrower;
+    }
+
+    public void setBorrower(User borrower) {
+        this.borrower = borrower;
     }}
