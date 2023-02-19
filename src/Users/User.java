@@ -62,4 +62,7 @@ public class User{
     public void addBook(String name, String author, String date, String isbn) throws SQLException {
         state.addBook(name, author, date, isbn);
     }
+    public void updateBook(int id, String name, String author, String date, String isbn) throws SQLException {
+        state.updateBook(id, name, author, date,isbn);
+    }
 }

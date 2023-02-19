@@ -179,10 +179,25 @@ public class MainInterface implements Login, Register{
                     currentUser.addBook(name, author, year_of_publish, isbn);
                 }
                 case 2 -> {
-
+                    Book.showAllAvailableBooks();
+                    System.out.print("Enter book id: ");
+                    int id = Integer.parseInt(input.next());
+                    System.out.print("Enter book name: ");
+                    String name = input.next();
+                    System.out.print("Enter book author: ");
+                    String author = input.next();
+                    System.out.print("Enter year of publish(YYYY-MM-DD): ");
+                    String year_of_publish = input.next();
+                    year_of_publish = DateValidator.DateFormatValidate(year_of_publish);
+                    System.out.print("Enter ISBN: ");
+                    String isbn = input.next();
+                    currentUser.updateBook(id, name, author, year_of_publish, isbn);
                 }
                 case 3 ->{
 
+                }
+                case 6->{
+                    currentUser = null;
                 }
             }
         }

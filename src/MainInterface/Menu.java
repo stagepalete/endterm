@@ -22,6 +22,7 @@ public class Menu {
         menu.add("Search book");
         menu.add("Update book");
         menu.add("Back");
+        menu.add("Log out");
         showOptions(menu);
     }
     public static void SearchMenu(){
