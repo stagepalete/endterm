@@ -3,6 +3,8 @@ package MainInterface;
 import Books.Book;
 import Users.*;
 
+import java.io.Console;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Objects;
 import java.util.Scanner;
@@ -82,7 +84,9 @@ public class MainInterface implements Login, Register{
             UserOption = Integer.parseInt(input.next());
             switch (UserOption) {
                 case 1 -> {
+                    System.out.println();
                     Book.showAllAvailableBooks();
+                    System.out.println();
                 }
                 case 2 -> {
 

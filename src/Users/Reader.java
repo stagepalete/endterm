@@ -11,6 +11,9 @@ public class Reader extends User {
         super(id, name, lastname, username);
     }
 
+    public void pickUpBook(int id){
+        
+    }
 
     public void setState(State state){
         super.setState(state);
