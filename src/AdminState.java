@@ -19,7 +19,9 @@ public class AdminState implements State{
 
     @Override
     public void deleteBook(int id) throws SQLException {
-        
+        String query = "DELETE FROM `books` WHERE `id` = %d".formatted(id);
+        DatabaseConnector.executeQuery(query);
+        System.out.println("Book %d successfully deleted");
     }
 
     @Override
