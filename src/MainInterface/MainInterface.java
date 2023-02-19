@@ -118,7 +118,26 @@ public class MainInterface implements Login, Register{
                     currentUser.pickBook(currentUser.getID(), id, day_of_a, day_of_r);
                 }
                 case 3 ->{
-
+                    Menu.SearchMenu();
+                    System.out.print("Choose option: ");
+                    UserOption = Integer.parseInt(input.next());
+                    switch (UserOption){
+                        case 1 -> {
+                            System.out.print("Enter book id: ");
+                            int book_id = Integer.parseInt(input.next());
+                            Book.searchById(book_id);
+                        }
+                        case 2 -> {
+                            System.out.print("Enter book name: ");
+                            String book_name = input.next();
+                            Book.searchByName(book_name);
+                        }
+                        case 3->{
+                            System.out.print("Enter author's name: ");
+                            String author_name = input.next();
+                            Book.searchByAuthor(author_name);
+                        }
+                    }
                 }
                 case 4 -> {
 
