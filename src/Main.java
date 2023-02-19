@@ -7,7 +7,7 @@ public class Main {
     // Arman: Book:Class, Library:Class
     // Miras: Database Connection:Class, Creating Database table
     // Bokhrom: UserState:Class, Main Interface of Program:Class
-    // Yedige: State:Interface, AdminState:Class,
+    // Yedige: State:Interface, AdminState:Class, User
 
     // DATABASE
     // books: id:int(PK), name, author, yearOfPublish:Date, isbn:String
