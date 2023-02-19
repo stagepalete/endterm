@@ -55,7 +55,7 @@ public class User{
         state.showMyBooks(id);
     }
 
-    public void returnBook(int id) throws SQLException {
-        state.returnBook(id);
+    public void returnBook(int book_id, int user_id) throws SQLException {
+        state.returnBook(book_id, user_id);
     }
 }

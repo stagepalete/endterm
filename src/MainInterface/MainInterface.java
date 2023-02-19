@@ -141,8 +141,8 @@ public class MainInterface implements Login, Register{
                 case 4 -> {
                     currentUser.showMyBooks(currentUser.getID());
                     System.out.println("Choose id of book: ");
-                    int id = Integer.parseInt(input.next());
-                    currentUser.returnBook(id);
+                    int book_id = Integer.parseInt(input.next());
+                    currentUser.returnBook(book_id, currentUser.getID());
                 }
                 case 5->{
                     currentUser.showMyBooks(currentUser.getID());

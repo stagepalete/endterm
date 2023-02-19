@@ -30,8 +30,8 @@ public class UserState implements State {
     }
 
     @Override
-    public void returnBook(int id) throws SQLException {
-        String query = "DELETE FROM `book-user` WHERE `book-user`.`id` = %d".formatted(id);
+    public void returnBook(int book_id, int user_id) throws SQLException {
+        String query = "DELETE FROM `book-user` WHERE `book-user`.`book_id` = '%d' and `user_id` = '%d'".formatted(book_id, user_id);
         DatabaseConnector.executeQueryCUD(query);
         System.out.println("Book returned");
     }

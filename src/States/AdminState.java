@@ -33,7 +33,7 @@ public class AdminState implements State {
     }
 
     @Override
-    public void returnBook(int id) {
+    public void returnBook(int book_id, int user_id) {
 
     }
 
