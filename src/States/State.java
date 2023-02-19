@@ -19,4 +19,5 @@ public interface State {
     public void showMyBooks(int id) throws SQLException;
 
     boolean checkBookExistence(int id) throws SQLException;
+    public boolean checkUserBooks(int user_id) throws SQLException;
 }

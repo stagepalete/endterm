@@ -71,4 +71,7 @@ public class User{
     public boolean checkBookExistence(int bookId) throws SQLException {
         return state.checkBookExistence(bookId);
     }
+    public boolean checkUserBooks(int user_id) throws SQLException{
+        return state.checkUserBooks(user_id);
+    }
 }
