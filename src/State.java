@@ -4,9 +4,9 @@ public interface State {
 //    Admin methods
     void addBook(String name, String author, String date, String isbn) throws SQLException;
 
-    public void updateBook();
+    public void updateBook(int id, String name, String author, String date, String isbn) throws SQLException;
 
-    public void deleteBook();
+    public void deleteBook(int id) throws SQLException;
 
 
 //    User methods

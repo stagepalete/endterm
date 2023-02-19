@@ -7,12 +7,12 @@ public class UserState implements State{
     }
 
     @Override
-    public void updateBook() {
+    public void updateBook(int id, String name, String author, String date, String isbn) {
         System.out.println("You don't have permissions to access this option");
     }
 
     @Override
-    public void deleteBook() {
+    public void deleteBook(int id) throws SQLException {
         System.out.println("You don't have permissions to access this option");
     }
 
