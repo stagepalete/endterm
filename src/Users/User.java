@@ -1,10 +1,12 @@
 package Users;
 
 
+import MainInterface.Login;
+import MainInterface.Register;
 import States.State;
 import States.UserState;
 
-public class User implements Login, Register{
+public class User {
     private static int ID;
     private static String NAME;
     private static String LASTNAME;
@@ -47,13 +49,6 @@ public class User implements Login, Register{
         return isAdmin;
     }
 
-    @Override
-    public User Login(String username, String password) {
-        return null;
-    }
 
-    @Override
-    public void register() {
 
-    }
 }

@@ -33,7 +33,7 @@ public class Menu {
         menu.add("Back");
         showOptions(menu);
     }
-    public static void LoginMenu(){
+    public static void AuthMenu(){
         // Shows login options
         ArrayList<String> menu = new ArrayList<String>();
         menu.add("Login");
