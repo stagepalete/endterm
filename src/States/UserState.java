@@ -2,6 +2,7 @@ package States;
 
 import Database.DatabaseConnector;
 
+import javax.xml.crypto.Data;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -52,5 +53,16 @@ public class UserState implements State {
             System.out.println("%d) %s, %s, %s, %s (return day: %s)". formatted(id, name, author, year_of_publish, isbn, day_of_return));
         }
         System.out.println();
+    }
+
+    @Override
+    public boolean checkBookExistence(int id) throws SQLException {
+        String query = "Select * from `book-user` where `id` = %d".formatted(id);
+        ResultSet resultSet = DatabaseConnector.executeQueryRead(query);
+        if(!resultSet.next()){
+            System.out.println("There is no field with such id!");
+            return false;
+        }
+        return true;
     }
 }

@@ -41,4 +41,10 @@ public class AdminState implements State {
     public void showMyBooks(int id) {
 
     }
+
+    @Override
+    public boolean checkBookExistence(int bookId) {
+
+        return false;
+    }
 }

@@ -19,6 +19,10 @@ public class Reader extends User {
         super.getState().pickBook(user_id, book_id, day_of_acq, day_of_return);
     }
 
+    public boolean checkBookExistence(int id) throws SQLException {
+        return super.getState().checkBookExistence(id);
+
+    }
     public void setState(State state){
         super.setState(state);
     }

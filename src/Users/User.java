@@ -68,4 +68,7 @@ public class User{
 
     }
 
+    public boolean checkBookExistence(int bookId) throws SQLException {
+        return state.checkBookExistence(bookId);
+    }
 }
