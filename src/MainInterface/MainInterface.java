@@ -32,23 +32,41 @@ public class MainInterface implements Login, Register{
             System.out.print("Choose option: ");
             UserOption = Integer.parseInt(input.next());
             switch (UserOption){
-                case 1:
+                case 1 -> {
                     System.out.print("Username: ");
                     String username = input.next();
                     System.out.print("Password: ");
                     String password = input.next();
-                    Login(username, password);
+                    Login.Login(username, password);
                     menu();
-                case 2:
+                }
+                case 2 -> {
                     System.out.print("Name: ");
+                    String name = input.next();
                     System.out.print("Lastname: ");
+                    String lastname = input.next();
                     System.out.print("Username: ");
+                    String username = input.next();
+                    while(!Register.CheckUsername(username)){
+                        System.out.print("Username: ");
+                        username = input.next();
+                    }
                     System.out.print("Password: ");
-                    System.out.print("Confirm your password: \n");
-                    // code
+                    String password1 = input.next();
+                    System.out.print("Confirm your password: ");
+                    String password2 = input.next();
+                    while(!Register.ValidatePassword(password1, password2)){
+                        System.out.print("Password: ");
+                        password1 = input.next();
+                        System.out.print("Confirm your password: ");
+                        password2 = input.next();
+                    }
+                    Register.Register(name, lastname, username, password1);
                     menu();
-                case 3:
+                }
+                case 3 -> {
                     menu();
+                }
             }
         } catch (NumberFormatException e) {
             System.out.println("Error: You must enter an integer.");
@@ -60,14 +78,6 @@ public class MainInterface implements Login, Register{
     public static void UserMenu(){}
     public static void AdminMenu(){}
 
-    public static void Login(String username, String password) throws SQLException {
-
-    }
-
-
-    public static void Register(String name, String lastanme, String username, String password1, String password2) {
-        Register.ValidatePassword(password1, password2);
-    }
 
 
 }

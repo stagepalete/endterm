@@ -16,7 +16,6 @@ public class Main {
     // users: id:int(PK), name:String, lastname:String, username:String, password:String(255)
     // Books.Book - Users.User table: id:int, user_id:int(FK), book_id:int(FK), dayOfAcquisition (Date), dayOfReturn (Date)
     public static void main(String[] args) throws SQLException {
-
         MainInterface.menu();
     }
 }
