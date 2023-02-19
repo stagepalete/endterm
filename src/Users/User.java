@@ -58,4 +58,8 @@ public class User{
     public void returnBook(int book_id, int user_id) throws SQLException {
         state.returnBook(book_id, user_id);
     }
+
+    public void addBook(String name, String author, String date, String isbn) throws SQLException {
+        state.addBook(name, author, date, isbn);
+    }
 }

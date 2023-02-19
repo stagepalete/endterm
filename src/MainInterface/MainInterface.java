@@ -161,7 +161,38 @@ public class MainInterface implements Login, Register{
         }
 
     }
-    public static void AdminMenu(){}
+    public static void AdminMenu(){
+        try{
+            System.out.print("Choose option: ");
+            UserOption = Integer.parseInt(input.next());
+            switch (UserOption) {
+                case 1 -> {
+                    System.out.print("Enter book name: ");
+                    String name = input.next();
+                    System.out.print("Enter book author: ");
+                    String author = input.next();
+                    System.out.print("Enter year of publish(YYYY-MM-DD): ");
+                    String year_of_publish = input.next();
+                    year_of_publish = DateValidator.DateFormatValidate(year_of_publish);
+                    System.out.println("Enter ISBN: ");
+                    String isbn = input.next();
+                    currentUser.addBook(name, author, year_of_publish, isbn);
+                }
+                case 2 -> {
+
+                }
+                case 3 ->{
+
+                }
+            }
+        }
+        catch (NumberFormatException e){
+            System.out.println("Error: You must enter an integer.");
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 
 

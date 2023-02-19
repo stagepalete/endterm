@@ -1,6 +1,7 @@
 package MainInterface;
 
 import Database.DatabaseConnector;
+import States.AdminState;
 import Users.Admin;
 import Users.Reader;
 import Users.User;
@@ -20,7 +21,8 @@ public interface Login {
                 String name = resultset.getString("name");
                 String lastname =resultset.getString("lastname");
                 if(Objects.equals(resultset.getString("isAdmin"), "1")){
-                    return new Admin(Integer.parseInt(id), name, lastname, username);
+                    return new Admin(Integer.parseInt(id), name, lastname, username, new AdminState());
+
                 }else if(Objects.equals(resultset.getString("isAdmin"), "0")){
                     System.out.printf("Welcome, %s%n", name);
                     return new Reader(Integer.parseInt(id), name, lastname, username);
