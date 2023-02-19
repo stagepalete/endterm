@@ -7,7 +7,7 @@ public class Menu {
         // Shows all available methods
         ArrayList<String> menu = new ArrayList<String>();
         menu.add("Show all available books");
-        menu.add("Pick up books");
+        menu.add("Pick up a book");
         menu.add("Search books");
         menu.add("Return book");
         menu.add("Show my books");

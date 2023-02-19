@@ -89,7 +89,14 @@ public class MainInterface implements Login, Register{
                     System.out.println();
                 }
                 case 2 -> {
-
+                    Book.showAllAvailableBooks();
+                    System.out.print("Enter book id from list below: ");
+                    int id = Integer.parseInt(input.next());
+                    System.out.println("Enter day of acquisition(YYY-MM-DD): ");
+                    String day_of_acq = input.next();
+                    System.out.println("Enter day of return: ");
+                    String day_of_return = input.next();
+                    currentUser.pickBook(currentUser.getID(), id, day_of_acq, day_of_return);
                 }
                 case 3 ->{
 

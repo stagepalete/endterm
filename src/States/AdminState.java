@@ -28,7 +28,7 @@ public class AdminState implements State {
     }
 
     @Override
-    public void pickBook() {
+    public void pickBook(int user_id, int book_id, String day_of_acq, String day_of_return) {
 
     }
 
