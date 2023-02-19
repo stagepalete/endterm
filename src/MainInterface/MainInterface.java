@@ -71,6 +71,9 @@ public class MainInterface implements Login, Register{
                 case 3 -> {
                     menu();
                 }
+                case 4->{
+                    System.exit(0);
+                }
             }
         } catch (NumberFormatException e) {
             System.out.println("Error: You must enter an integer.");
@@ -221,8 +224,14 @@ public class MainInterface implements Login, Register{
                     String isbn = input.next();
                     currentUser.updateBook(id, name, author, year_of_publish, isbn);
                 }
+                case 5->{
+                    menu();
+                }
                 case 6->{
                     currentUser = null;
+                }
+                case 7 ->{
+                    System.exit(0);
                 }
             }
         }

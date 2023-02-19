@@ -23,6 +23,7 @@ public class Menu {
         menu.add("Update book");
         menu.add("Back");
         menu.add("Log out");
+        menu.add("Exit");
         showOptions(menu);
     }
     public static void SearchMenu(){
@@ -40,6 +41,7 @@ public class Menu {
         menu.add("Login");
         menu.add("Register");
         menu.add("Back");
+        menu.add("Exit");
         showOptions(menu);
     }
     public static void showOptions(ArrayList<String> options){
