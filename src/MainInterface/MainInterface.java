@@ -6,6 +6,7 @@ import Users.*;
 import java.io.Console;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -92,11 +93,29 @@ public class MainInterface implements Login, Register{
                     Book.showAllAvailableBooks();
                     System.out.print("Enter book id from list below: ");
                     int id = Integer.parseInt(input.next());
-                    System.out.println("Enter day of acquisition(YYY-MM-DD): ");
-                    String day_of_acq = input.next();
-                    System.out.println("Enter day of return: ");
-                    String day_of_return = input.next();
-                    currentUser.pickBook(currentUser.getID(), id, day_of_acq, day_of_return);
+                    String day_of_a = null;
+                    String day_of_r = null;
+                    while(day_of_a == null && day_of_r == null){
+                        System.out.print("Enter day of acquisition(YYY-MM-DD): ");
+                        String day_of_acq = input.next();
+                        day_of_a= DateValidator.DateFormatValidate(day_of_acq);
+                        if(day_of_a == null){
+                            continue;
+                        }
+                        System.out.print("Enter day of return(YYYY-MM-DD): ");
+                        String day_of_return = input.next();
+                        day_of_r = DateValidator.DateFormatValidate(day_of_return);
+                        if(day_of_r == null){
+                            continue;
+                        }
+                    }
+
+                    assert day_of_r != null;
+                    if(!DateValidator.DateTimeLineValidate(day_of_a,day_of_r)){
+                        System.out.println("Stop");
+                    }
+
+                    currentUser.pickBook(currentUser.getID(), id, day_of_a, day_of_r);
                 }
                 case 3 ->{
 
