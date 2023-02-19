@@ -21,4 +21,8 @@ public class Admin extends User{
         date = DateValidator.DateFormatValidate(date);
         this.getState().updateBook(id, name, author, date, isbn);
     }
+    @Override
+    public void deleteBook(int id) throws SQLException {
+        this.getState().deleteBook(id);
+    }
 }

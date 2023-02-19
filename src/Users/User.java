@@ -64,5 +64,8 @@ public class User{
     public void updateBook(int id, String name, String author, String date, String isbn) throws SQLException {
 
     }
+    public void deleteBook(int id) throws SQLException {
+
+    }
 
 }

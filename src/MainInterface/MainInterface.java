@@ -174,11 +174,39 @@ public class MainInterface implements Login, Register{
                     System.out.print("Enter year of publish(YYYY-MM-DD): ");
                     String year_of_publish = input.next();
                     year_of_publish = DateValidator.DateFormatValidate(year_of_publish);
-                    System.out.println("Enter ISBN: ");
+                    System.out.print("Enter ISBN: ");
                     String isbn = input.next();
                     currentUser.addBook(name, author, year_of_publish, isbn);
                 }
                 case 2 -> {
+                    Book.showAllAvailableBooks();
+                    System.out.println("Enter book id: ");
+                    int id = Integer.parseInt(input.next());
+                    currentUser.deleteBook(id);
+                }
+                case 3 ->{
+                    Menu.SearchMenu();
+                    System.out.print("Choose option: ");
+                    UserOption = Integer.parseInt(input.next());
+                    switch (UserOption){
+                        case 1 -> {
+                            System.out.print("Enter book id: ");
+                            int book_id = Integer.parseInt(input.next());
+                            Book.searchById(book_id);
+                        }
+                        case 2 -> {
+                            System.out.print("Enter book name: ");
+                            String book_name = input.next();
+                            Book.searchByName(book_name);
+                        }
+                        case 3->{
+                            System.out.print("Enter author's name: ");
+                            String author_name = input.next();
+                            Book.searchByAuthor(author_name);
+                        }
+                    }
+                }
+                case 4-> {
                     Book.showAllAvailableBooks();
                     System.out.print("Enter book id: ");
                     int id = Integer.parseInt(input.next());
@@ -192,9 +220,6 @@ public class MainInterface implements Login, Register{
                     System.out.print("Enter ISBN: ");
                     String isbn = input.next();
                     currentUser.updateBook(id, name, author, year_of_publish, isbn);
-                }
-                case 3 ->{
-                    
                 }
                 case 6->{
                     currentUser = null;
