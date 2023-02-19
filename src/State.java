@@ -2,7 +2,7 @@ import java.sql.SQLException;
 
 public interface State {
 //    Admin methods
-    public void addBook() throws SQLException;
+    void addBook(String name, String author, String date, String isbn) throws SQLException;
 
     public void updateBook();
 

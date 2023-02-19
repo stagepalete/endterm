@@ -18,7 +18,7 @@ public class DatabaseConnector {
     public static ResultSet executeQuery(String query) throws SQLException {
         Connection connection = connect();
         Statement statement = connection.createStatement();
-        return statement.executeQuery("SELECT * FROM `users`");
+        return statement.executeQuery(query);
     }
     public static boolean isConnected(){
         return isConnected;
